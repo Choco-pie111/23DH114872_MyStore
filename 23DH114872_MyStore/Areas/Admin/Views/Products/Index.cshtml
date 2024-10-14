@@ -1,15 +1,47 @@
-﻿@model IEnumerable<_23DH114872_MyStore.Models.Product>
+﻿@*@model IEnumerable<_23DH114872_MyStore.Models.Product>*@
+@model _23DH114872_MyStore.Models.ViewModel.ProductSearchVM
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Search Product";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
+<html>
 <head>
-     <style>
-          img{
-              height:150px;
-              max-width: 150px;
-          }
-     </style>
+    <meta name="viewport" content="width=device-width" />
+    <title>
+        Search
+    </title>
+    <style>
+        .search-container, .oder-container{
+            padding-top:20px;
+            display:flex;
+            justify-content:center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Form tìm kiếm -->
+    @using (Html.BeginForm("Index", "Products", FormMethod.Get))
+            {
+                <div class="form-group search-container">
+                    @Html.TextBoxFor(m => m.SearchTerm, new
+               {
+                   @class="form-control",
+                   placeholder = ""
+               })
+                </div>
+            }
+</body>
+</html>
+
+@*<head>
+
+    <style>
+        img {
+            height: 150px;
+            max-width: 150px;
+        }
+    </style>
 </head>
 <h2 class="bg-success container-fluid">DANH SÁCH SẢN PHẨM</h2>
 
@@ -58,4 +90,6 @@
     <div class="col-md-offset-8 col-md-4">
         @Html.ActionLink("Thêm mới", "Create", null, new { @class = "btn btn-primary " })
     </div>
-</div>
+</div>*@
+
+
