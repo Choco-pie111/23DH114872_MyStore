@@ -1,5 +1,5 @@
 ﻿@model _23DH114872_MyStore.Models.ViewModel.ProductSearchVM
-
+@using PagedList.Mvc
 
 <head>
 
@@ -11,6 +11,7 @@
     </style>
 </head>
 <hr />
+<!-- Hiển thị danh sách sản phẩmx    -->
 @if (Model.Products != null && Model.Products.Any())
 {
     <h2 class="bg-success container-fluid">DANH SÁCH SẢN PHẨM</h2>
@@ -55,6 +56,11 @@
             </tr>
         }
     </table>
+    <!-- Hiển thị phân trang -->
+    <div class="pagination-container">
+        @Html.PagedListPager(Model.Products, page => Url.Action("Index", new { page, searchTerm = Model.SearchTerm,
+       minPrice = Model.MinPrice, maxPrice = Model.MaxPrice, sortOder = Model.SortOder }))
+    </div>
 }
 else
 {
