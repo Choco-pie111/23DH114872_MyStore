@@ -1,23 +1,5 @@
 ﻿@model _23DH114872_MyStore.Models.Product
 
-@*@{
-        ViewBag.Title = "Create";
-        Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
-    }
-
-    <h2 class="bg-success">THÊM SẢN PHẨM</h2>
-
-    @using (Html.BeginForm())
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-horizontal">
-            <h4>Product</h4>
-            <hr />
-            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-            @Html.Partial("PVCreateEditProduct", Model)
-        </div>
-    }*@
 @{
     ViewBag.Title = "Create";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";

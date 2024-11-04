@@ -32,7 +32,7 @@ namespace _23DH114872_MyStore.Areas.Admin.Controllers
             }
             //Tìm kiếm sản phẩm dựa trên giá tối thiếu
             if (minPrice.HasValue)
-            {
+            { 
                 model.MinPrice = minPrice.Value;
                 products = products.Where(p => p.ProductPrice >= minPrice.Value);
             }
